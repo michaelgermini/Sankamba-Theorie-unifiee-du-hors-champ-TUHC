@@ -1,0 +1,27 @@
+# Éditeurs / IDE
+.vscode/
+.idea/
+
+# Environnement Cursor / fichiers locaux
+.cursor/
+
+# Fichiers système
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python (au cas où des scripts sont ajoutés plus tard)
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Node / JS (au cas où)
+node_modules/
+dist/
+build/
+
+# Divers
+*.log
+*.tmp
+
+
