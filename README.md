@@ -1,83 +1,182 @@
-📘 **Sankamba — Théorie unifiée du hors-champ (TUHC)**
+# 📘 Sankamba — Théorie unifiée du hors-champ (TUHC)
 
-Ce dépôt contient le projet de livre *Sankamba — Théorie unifiée du hors-champ*, ainsi que ses **RFC associées**.  
-L’objectif est de proposer à la fois :
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub issues](https://img.shields.io/github/issues/michaelgermini/Sankamba-Theorie-unifiee-du-hors-champ-TUHC)](https://github.com/michaelgermini/Sankamba-Theorie-unifiee-du-hors-champ-TUHC/issues)
+[![GitHub stars](https://img.shields.io/github/stars/michaelgermini/Sankamba-Theorie-unifiee-du-hors-champ-TUHC)](https://github.com/michaelgermini/Sankamba-Theorie-unifiee-du-hors-champ-TUHC/stargazers)
 
-- un **texte long pédagogique** (chapitres 1 à 9) ;
-- et une **formalisation technique** (RFC-0001 / RFC-0002) permettant l’implémentation, la simulation et l’annotation de cas concrets.
+> **Cadre théorique et technique pour penser, modéliser et analyser le "hors-champ"** — ce qui échappe à la visibilité directe mais structure notre réalité sociale, esthétique et ontologique.
 
-## Vue d’ensemble
+Ce dépôt contient le manuscrit complet du livre *Sankamba — Théorie unifiée du hors-champ* ainsi que ses spécifications techniques RFC. Il offre une approche duale :
 
-- **Sankamba** : cadre théorique général autour du hors-champ.  
-- **TUHC (Théorie Unifiée du Hors-Champ)** : cœur conceptuel, articulé en trois axes (politique, esthétique, ontologique).  
-- **MULS** : langage structurel des mini-univers, utilisé comme base pour l’axe ontologique et les simulations.  
-- **MML–DNF–Morse** : exemples techniques de transmission “hors-champ” (environnements contraints, off‑grid), évoqués dans les applications.
+- **📖 Texte narratif pédagogique** : 9 chapitres explorant les concepts de façon progressive
+- **🔧 Formalisation technique** : RFC pour implémenter et simuler des configurations de hors-champ
 
-Le dépôt est pensé pour être lisible **comme un livre** mais aussi utilisable **comme une base de travail** pour des projets de recherche, d’art, de design ou d’ingénierie.
+## 📋 Table des matières
 
-## Structure du projet
+- [Vue d'ensemble](#-vue-densemble)
+- [Installation et utilisation](#-installation-et-utilisation)
+- [Structure du projet](#-structure-du-projet)
+- [Guide de lecture](#-guide-de-lecture)
+- [Contribuer](#-contribuer)
+- [Licence](#-licence)
+- [Remerciements](#-remerciements)
 
-- `README.md` : présentation générale du projet, mode d’emploi rapide.
-- `plan_global.md` : table des matières détaillée et notes de structure du livre.
-- `RFC-0001-TUHC.md` : modèle conceptuel et terminologie de base de la TUHC (champ / hors-champ, axes P/A/O, configuration de hors-champ).
-- `RFC-0002-TUHC.md` : grammaire formelle minimale, signatures `SIG(TUHC)`, définition d’`UMH` (Univers avec Hors-champ) et intégration avec MULS.
-- Dossier `chapitres/` : texte complet du livre, un fichier par chapitre :
-  - `chapitre_01_introduction.md` — Introduction à Sankamba et à la TUHC.
-  - `chapitre_02_fondements_theoriques.md` — Fondements théoriques, perception, capitalisme attentionnel, trois axes.
-  - `chapitre_03_axe_politique.md` — Axe politique : hors-champ social, pouvoir implicite, topologies invisibles.
-  - `chapitre_04_axe_esthetique.md` — Axe esthétique : hors-champ perceptuel, omissions, silences, exemples artistiques.
-  - `chapitre_05_axe_ontologique.md` — Axe ontologique : espace relationnel, morphs, couches, formalisation via MULS.
-  - `chapitre_06_synthese_des_axes.md` — Synthèse P/A/O, définition de `SIG(TUHC)` et premiers scénarios de simulation.
-  - `chapitre_07_applications_pratiques.md` — Analyses sociales, art & design, simulations, transmission, gouvernance hors-champ.
-  - `chapitre_08_perspectives_extensions.md` — RFC TUHC, extensions multidimensionnelles, théorie générale du hors-champ universel.
-  - `chapitre_09_annexes.md` — Glossaire, exemples de mini-univers, piste de bibliographie, remerciements.
+## 🔍 Vue d'ensemble
 
-## Comment lire / utiliser ce dépôt
+**Sankamba** propose un cadre unifié pour analyser et formaliser le concept de "hors-champ" — ces éléments qui structurent notre réalité sans être directement visibles ou accessibles.
 
-### Lecture “livre” (conceptuelle)
+### Composants principaux
 
-- **Étape 1** : lire `chapitre_01_introduction.md` et `chapitre_02_fondements_theoriques.md` pour saisir le vocabulaire de base (hors-champ, axes P/A/O, TUHC, lien avec MULS).  
-- **Étape 2** : enchaîner avec les chapitres 3, 4 et 5 pour explorer en détail chaque axe (politique, esthétique, ontologique).  
-- **Étape 3** : lire `chapitre_06_synthese_des_axes.md` pour comprendre la notion de **signature de hors-champ** `SIG(TUHC)` et la synthèse des axes.  
-- **Étape 4** : utiliser les chapitres 7 et 8 comme **boîte à outils** (applications, perspectives, liens avec MULS, MML–DNF–Morse, RFC).
+- **📚 TUHC (Théorie Unifiée du Hors-Champ)** : Cœur conceptuel articulé autour de trois axes fondamentaux
+  - Axe **politique** : pouvoir implicite, structures sociales invisibles
+  - Axe **esthétique** : perception subliminale, omissions artistiques
+  - Axe **ontologique** : structures fondamentales de la réalité
 
-### Lecture “spec” (technique)
+- **🧬 MULS (Mini-Universe Language Structural)** : Langage formel pour décrire les structures ontologiques
 
-- **Commencer par `RFC-0001-TUHC.md`** :  
-  - définitions officielles de champ/hors-champ,  
-  - description des axes,  
-  - notion de configuration `H = (P, A, O)`.
-- **Puis `RFC-0002-TUHC.md`** :  
-  - morphs TUHC (`P`, `A`, `O`, `E_H`, `X_H`),  
-  - opérateurs (`->`, `~>`, `<->`, `*`, `[]`),  
-  - forme générale de `SIG_TUHC(...)`,  
-  - définition d’`UMH` et **trois exemples complets** :
-    - plateforme vidéo off-grid sobre,
-    - réseau social centralisé grand public,
-    - mini-univers cosmologique abstrait (cosmo / MULS pur).
+- **📡 MML–DNF–Morse** : Exemples d'architectures techniques implémentant des principes de hors-champ
 
-Ces fichiers RFC servent de **pont** entre le texte et d’éventuelles implémentations (code, simulations, annotations de données).
+### Public cible
 
-## Méthodologie d'écriture / de travail
+- **Chercheurs** en sciences sociales, philosophie, design
+- **Artistes** et créateurs explorant les limites de la perception
+- **Ingénieurs** travaillant sur des systèmes distribués ou contraints
+- **Développeurs** intéressés par les langages formels et simulations
 
-1. **Structure d'abord** :  
-   - clarifier les sections, sous-sections et liens conceptuels (TUHC, MULS, MML–DNF–Morse, axes P/A/O),  
-   - utiliser `plan_global.md` comme carte.
-2. **Remplissage progressif** :  
-   - travailler chapitre par chapitre,  
-   - ancrer chaque développement dans l’un des axes, puis le reconnecter aux autres.
-3. **Allers-retours théorie / exemples** :  
-   - alterner formalisations, schémas, analogies et cas concrets (art, réseaux sociaux, physique, mini-univers, protocoles réseau).  
-4. **Intégration des RFC** :  
-   - considérer les RFC comme des “annexes vivantes”, prêtes à être révisées au fur et à mesure que la théorie se précise,  
-   - utiliser la grammaire TUHC/MULS pour décrire des cas précis (UMH) rencontrés en recherche ou en pratique.
+## 🚀 Installation et utilisation
 
-Le style visé est **pédagogique, rigoureux et technique**, en français, avec une progression du plus intuitif (perception du hors-champ) vers le plus formel (TUHC, `SIG(TUHC)`, MULS, simulations).
+### Prérequis
 
-## État du projet
+- Aucun prérequis technique particulier pour lire le manuscrit
+- Pour les simulations : Python 3.8+, bibliothèques de graphes (NetworkX) et visualisation (Matplotlib)
 
-- Texte des chapitres 1 à 9 : **rédigé** (version de travail, appelant encore relectures et ajustements).  
-- `RFC-0001-TUHC.md` et `RFC-0002-TUHC.md` : **brouillons structurés**, suffisamment stables pour des premières expérimentations.  
-- Exemples UMH (off-grid, réseau social, cosmologique) : **prototypes conceptuels** destinés à être affinés et éventuellement implémentés.
+### Installation
 
-Les contributions possibles incluent : corrections, ajouts d’exemples, propositions d’autres UMH, extensions de la grammaire TUHC ou traductions partielles dans d’autres langues.
+```bash
+# Cloner le dépôt
+git clone https://github.com/michaelgermini/Sankamba-Theorie-unifiee-du-hors-champ-TUHC.git
+cd Sankamba-Theorie-unifiee-du-hors-champ-TUHC
+
+# (Optionnel) Créer un environnement virtuel pour les simulations
+python -m venv venv
+source venv/bin/activate  # Sur Windows: venv\Scripts\activate
+pip install -r requirements.txt  # Si un fichier requirements.txt est ajouté
+```
+
+## 📁 Structure du projet
+
+```
+Sankamba-Theorie-unifiee-du-hors-champ-TUHC/
+├── 📖 chapitres/                    # Manuscrit du livre (9 chapitres)
+│   ├── chapitre_01_introduction.md
+│   ├── chapitre_02_fondements_theoriques.md
+│   ├── chapitre_03_axe_politique.md
+│   ├── chapitre_04_axe_esthetique.md
+│   ├── chapitre_05_axe_ontologique.md
+│   ├── chapitre_06_synthese_des_axes.md
+│   ├── chapitre_07_applications_pratiques.md
+│   ├── chapitre_08_perspectives_extensions.md
+│   └── chapitre_09_annexes.md
+├── 📋 RFC-0001-TUHC.md             # Modèle conceptuel TUHC
+├── 🔧 RFC-0002-TUHC.md             # Grammaire formelle et signatures
+├── 📝 plan_global.md               # Table des matières détaillée
+├── 📄 README.md                    # Ce fichier
+├── 🗂️ .gitignore                   # Fichiers ignorés par Git
+└── 🔬 examples/                    # (À venir) Scripts et simulations
+```
+
+## 📖 Guide de lecture
+
+### Parcours "Livre" (Approche narrative)
+
+Idéal pour découvrir les concepts de façon progressive :
+
+1. **Introduction** (`chapitre_01`, `chapitre_02`) : Vocabulaire de base et fondements théoriques
+2. **Axes fondamentaux** (`chapitre_03-05`) : Exploration détaillée des axes politique, esthétique et ontologique
+3. **Synthèse** (`chapitre_06`) : Intégration des axes et signatures TUHC
+4. **Applications** (`chapitre_07-08`) : Cas pratiques et perspectives futures
+
+### Parcours "Spécifications" (Approche technique)
+
+Pour les implémenteurs et chercheurs :
+
+1. **RFC-0001-TUHC.md** : Définitions conceptuelles et modèle de base
+2. **RFC-0002-TUHC.md** : Grammaire formelle, signatures et exemples UMH
+3. **Chapitre 9** : Glossaire et exemples de mini-univers
+
+### Utilisations avancées
+
+- **Simulation** : Utiliser les signatures TUHC pour modéliser des systèmes complexes
+- **Annotation** : Appliquer le cadre TUHC à l'analyse de données ou œuvres
+- **Extension** : Proposer de nouveaux morphs ou opérateurs pour des domaines spécifiques
+
+## 🤝 Contribuer
+
+### Types de contributions
+
+Nous accueillons diverses formes de contributions :
+
+- **📝 Corrections et améliorations** : Améliorations du texte, corrections typographiques
+- **🔬 Extensions théoriques** : Nouveaux exemples UMH, morphs TUHC, applications
+- **💻 Implémentations** : Scripts de simulation, visualisations, outils basés sur TUHC
+- **🌐 Traductions** : Versions dans d'autres langues
+- **📊 Recherche** : Études empiriques utilisant le cadre TUHC
+
+### Processus de contribution
+
+1. **Fork** le dépôt
+2. **Créez** une branche pour votre contribution (`git checkout -b feature/amazing-feature`)
+3. **Committez** vos changements (`git commit -m 'Add amazing feature'`)
+4. **Poussez** vers votre fork (`git push origin feature/amazing-feature`)
+5. **Ouvrez** une Pull Request
+
+### Lignes directrices
+
+- Respectez le style pédagogique et technique du manuscrit
+- Pour les ajouts théoriques, référencez les sources appropriées
+- Testez les modifications sur plusieurs chapitres pour assurer la cohérence
+
+### Contact
+
+- 📧 Email : michael@germini.info
+- 🐛 Issues : [GitHub Issues](https://github.com/michaelgermini/Sankamba-Theorie-unifiee-du-hors-champ-TUHC/issues)
+- 💬 Discussions : Section discussions du dépôt
+
+## 📊 État du projet
+
+- ✅ **Chapitres 1-9** : Rédigés et structurés
+- ✅ **RFC TUHC** : Spécifications complètes avec exemples
+- 🚧 **Simulations** : Prototypes conceptuels (à développer)
+- 📈 **Communauté** : Ouvert aux contributions
+
+## 📄 Licence
+
+Ce projet est distribué sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+```
+Copyright (c) 2025 Michael Germini
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
+
+## 🙏 Remerciements
+
+**Sankamba** est le fruit d'une réflexion interdisciplinaire. Merci aux :
+
+- **Communauté académique** pour l'inspiration théorique
+- **Chercheurs en sciences sociales** pour les analyses du pouvoir invisible
+- **Artistes et designers** pour l'exploration des limites perceptuelles
+- **Développeurs open source** pour les outils techniques
+- **Contributeurs** pour leur engagement dans ce projet
+
+---
+
+*Dans l'immensité du visible, le hors-champ révèle la structure profonde de nos mondes.*
